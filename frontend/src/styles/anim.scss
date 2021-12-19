@@ -1,0 +1,30 @@
+$canvas-show-delay: 0s;
+$app-show-delay: 0.7s;
+
+@keyframes show {
+	from { opacity: 0 }
+	to { opacity: 1 }
+}
+
+@mixin show ($delay) {
+	animation: show $slow-transition ease;
+	animation-fill-mode: forwards;
+	animation-delay: $delay
+}
+
+#app, #canvas-container {
+	opacity: 0;
+
+	@keyframes show {
+		from { opacity: 0 }
+		to { opacity: 1 }
+	}
+}
+
+#app {
+	@include show($app-show-delay);
+}
+
+#canvas-container {
+	@include show($canvas-show-delay);
+}

@@ -1,0 +1,70 @@
+{
+	"title": "The Liminal Project",
+	"tagline": "Lorem ipsum dolor sit amet consectetur adipiscing elit nulla",
+	"footer": [
+		"More About Us",
+		"Contact Us"
+	],
+	"about": {
+		"title": "More About Us",
+		"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting."
+	},
+	"work": {
+		"title": "Our Work",
+		"description": "View our work.",
+		"caseStudies": [
+			{
+				"title": "Portfolio",
+				"year": 2020,
+				"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+			},
+			{
+				"title": "Cosmic Chat",
+				"year": 2019,
+				"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+			},
+			{
+				"title": "Cosmic Chat",
+				"year": 2019,
+				"description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+			}
+		]
+	},
+	"contact": {
+		"title": "Contact Us",
+		"reasons": [
+			"Requesting a Quote",
+			"Question",
+			"General Inquiry",
+			"Other"
+		]
+	},
+	"quote": {
+		"title": "Get a Quote",
+		"prompts": [
+			{
+				"keyword": "haveWebsite",
+				"question": "Do you already have a website?",
+				"options": ["Yes", "No"],
+				"skip": {
+					"option": 1,
+					"steps": 1
+				}
+			},
+			{
+				"keyword": "cms",
+				"question": "Is it built using a CMS (Wordpress, Squarespace, Webflow...etc",
+				"options": ["Yes", "No", "Not sure"]
+			},
+			{
+				"keyword": "rebranding",
+				"question": "Are you rebranding?",
+				"options": ["Yes", "No", "Not sure"]
+			}
+		]
+	},
+	"decision": {
+		"contactSubmission": "Thanks for your submission! Well get back to you very soon!",
+		"quoteSubmission": "Thanks for your submission! Well get back to you very soon!"
+	}
+}

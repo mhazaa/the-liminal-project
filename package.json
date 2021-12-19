@@ -7,6 +7,9 @@
     "backend",
     "frontend"
   ],
+  "scripts": {
+	  "deploy": "npm run build -w ./frontend && npm run start -w ./backend"
+  },
   "keywords": [],
   "author": "Magdi Hazaa",
   "license": "ISC",

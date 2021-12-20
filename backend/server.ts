@@ -14,6 +14,12 @@ app.use(express.json());
 app.use(express.static( resolve('../frontend/build') ));
 app.listen(HTTPPORT, () => console.log(`Listening to port: ${HTTPPORT}`));
 
+app.use((req, res, next) => {
+	(req.secure)
+		? next()
+		: res.redirect('https://' + req.headers.host + req.url);
+});
+
 const options = {
 	key: fs.readFileSync('./certs/theliminalproject.com.key'),
 	cert: fs.readFileSync('./certs/theliminalproject.com.crt'),

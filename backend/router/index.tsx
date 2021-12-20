@@ -27,7 +27,6 @@ export default (app: Application, collections: Collections): void => {
 		const resData = await collections.contactSubmissionCollection.insertOne(reqData);
 		console.log(reqData);
 		res.status(200).send(resData);
-
 	});
 
 	app.post('/quoteSubmission', async (req, res) => {

@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-	  "start": "webpack && pm2 start build/server.js && pm2 monit",
-	  "stop": "pm2 kill",
-	  "build": "webpack && node build/server",
-	  "dev": "concurrently \"webpack --watch\" \"pm2-dev build/server.js\""
+    "start": "webpack && pm2 start build/server.js && pm2 monit",
+    "stop": "pm2 kill",
+    "build": "webpack && node build/server",
+    "dev": "concurrently \"webpack --watch\" \"pm2-dev build/server.js\""
   },
   "keywords": [],
   "author": "Magdi Hazaa",
@@ -22,6 +22,7 @@
     "concurrently": "^6.5.1",
     "mini-css-extract-plugin": "^2.4.5",
     "pm2": "^5.1.2",
+    "ts-node": "^10.4.0",
     "webpack-node-externals": "^3.0.0"
   }
 }

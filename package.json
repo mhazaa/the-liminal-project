@@ -11,7 +11,9 @@
 	  "start": "npm run build -w ./frontend && npm run start -w ./backend",
 	  "stop": "npm run stop -w ./backend",
 	  "build": "npm run build -ws",
-	  "dev": "npm run dev -ws"
+	  "dev": "npm run dev -ws",
+	  "lint": "eslint . --ext .ts,.tsx --ignore-pattern node_modules/",
+	  "test": "npm run lint"
   },
   "keywords": [],
   "author": "Magdi Hazaa",

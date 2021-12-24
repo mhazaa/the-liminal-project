@@ -2,7 +2,7 @@ import { getUrl, changeUrl } from './Router';
 import { Pages } from '../../types';
 import World from './World';
 import { Vector2D } from './World/classes';
-// import { AnalyticsEngineClient } from 'mags-analytics';
+import { AnalyticsEngineClient } from 'mags-analytics';
 import isMobile from './modules/isMobile';
 
 export default class GroundControl {
@@ -45,7 +45,7 @@ export default class GroundControl {
 		changeUrl(page);
 		this.changeWorld(page);
 		const metricPage = (page === '') ? 'intro' : page;
-		//AnalyticsEngineClient.sendMetric(`Viewed ${metricPage}`);
+		AnalyticsEngineClient.sendMetric(`Viewed ${metricPage}`);
 	}
 
 	public enterIntro () {

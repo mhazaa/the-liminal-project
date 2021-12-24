@@ -3,7 +3,7 @@ import GroundControl from '../../GroundControl';
 import content from '../../../content.json';
 import Select from './Select';
 import Form from '../../components/Form';
-//import { AnalyticsEngineClient } from 'mags-analytics';
+import { AnalyticsEngineClient } from 'mags-analytics';
 import { FormData, contactSubmissionData } from '../../../../types';
 
 type ContactProps = {
@@ -32,7 +32,7 @@ const Contact: React.FC<ContactProps> = ({
 
 		console.log(res);
 		e.target.reset();
-		//AnalyticsEngineClient.sendMetric(`Filled contact form as: ${name}`);
+		AnalyticsEngineClient.sendMetric(`Filled contact form as: ${name}`);
 		groundControl?.decisionScreenRedirect();
 	};
 

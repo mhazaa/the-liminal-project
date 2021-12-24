@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import GroundControl from '../../GroundControl';
 import Form from '../../components/Form';
 import content from '../../../content.json';
-//import { AnalyticsEngineClient } from 'mags-analytics';
+import { AnalyticsEngineClient } from 'mags-analytics';
 import { FormData, quoteSubmissionData } from '../../../../types';
 
 type PromptProps = {
@@ -82,7 +82,7 @@ const Quote: React.FC<QuoteProps> = ({
 		console.log(res);
 		setStep(0);
 		e.target.reset();
-		//AnalyticsEngineClient.sendMetric(`Filled quote form as: ${name}`);
+		AnalyticsEngineClient.sendMetric(`Filled quote form as: ${name}`);
 		groundControl?.decisionScreenRedirect();
 	};
 

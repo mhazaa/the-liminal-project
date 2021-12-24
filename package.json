@@ -12,7 +12,7 @@
 	  "stop": "npm run stop -w ./backend",
 	  "build": "npm run build -ws",
 	  "dev": "npm run dev -ws",
-	  "lint": "eslint . --ext .ts,.tsx --ignore-pattern node_modules/",
+	  "lint": "eslint . --ext .ts,.tsx --ignore-pattern node_modules",
 	  "test": "npm run lint"
   },
   "keywords": [],

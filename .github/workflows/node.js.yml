@@ -29,4 +29,3 @@ jobs:
     - run: npm ci
     - run: npm run build
     - run: npm test
-    - run: curl -d '{"name": "magdi"}' -H 'Content-Type: application/json' http://134.122.122.97:8888/deploy

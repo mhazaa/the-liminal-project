@@ -36,11 +36,13 @@ export default class GroundControl {
 	}
 
 	public changePage (page: Pages) {
+		console.log(page);
+
 		(page === 'work')
 			? this.world.scene.add(this.world.workPlanet)
 			: this.world.scene.remove(this.world.workPlanet);
 
-		(page === 'home') ? this.enterIntro() : this.exitIntro();
+		(page === '') ? this.enterIntro() : this.exitIntro();
 
 		changeUrl(page);
 		this.changeWorld(page);

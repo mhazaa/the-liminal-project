@@ -15,10 +15,11 @@ const Contact: React.FC<ContactProps> = ({
 }) => {
 	const [reasonValue, setReasonValue] = useState<string>('');
 
-	const onSubmit = async (e: any, { name, email, phone, website }: FormData) => {
+	const onSubmit = async (e: React.FormEvent<HTMLFormElement>, { name, email, phone, website }: FormData) => {
 		e.preventDefault();
+		const target = e.target as HTMLFormElement;
 		const reason = reasonValue;
-		const message = e.target.message.value;
+		const message = target.message.value;
 		const data: contactSubmissionData = { name, email, phone, website, reason, message };
 
 		const res = await fetch('/contactSubmission', {
@@ -31,7 +32,7 @@ const Contact: React.FC<ContactProps> = ({
 		});
 
 		console.log(res);
-		e.target.reset();
+		target.reset();
 		AnalyticsEngineClient.sendMetric(`Filled contact form as: ${name}`);
 		groundControl?.decisionScreenRedirect();
 	};

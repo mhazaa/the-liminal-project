@@ -8,7 +8,7 @@ import { FormData, quoteSubmissionData } from '../../../../types';
 type PromptProps = {
 	question: string;
 	options: string[];
-	onClick: (e: any, data: { answer: string; }) => void;
+	onClick: (e: React.MouseEvent<HTMLAnchorElement>, data: { answer: string; }) => void;
 };
 
 const Prompt: React.FC<PromptProps> = ({
@@ -16,8 +16,8 @@ const Prompt: React.FC<PromptProps> = ({
 	options,
 	onClick
 }) => {
-	const click = (e: any) => {
-		const answer = e.currentTarget.querySelector('p').innerHTML;
+	const click = (e: React.MouseEvent<HTMLAnchorElement>) => {
+		const answer = e.currentTarget.querySelector('p')!.innerHTML;
 		onClick(e, { answer });
 	};
 
@@ -25,7 +25,7 @@ const Prompt: React.FC<PromptProps> = ({
 		<div>
 			<p>{question}</p>
 			{options.map((option: string, i: number) =>
-				<a key={i} className='button' onClick={(e: any) => click(e)}><p>{option}</p></a>)
+				<a key={i} className='button' onClick={(e) => click(e)}><p>{option}</p></a>)
 			}
 		</div>
 	);
@@ -44,7 +44,7 @@ const Quote: React.FC<QuoteProps> = ({
 	const prompts = content.quote.prompts;
 	const activePrompt = prompts[step];
 
-	const onClick = (e: any, { answer }: { answer: string }) => {
+	const onClick = (e: React.MouseEvent<HTMLAnchorElement>, { answer }: { answer: string }) => {
 		e.preventDefault();
 	
 		setDetails({
@@ -62,8 +62,9 @@ const Quote: React.FC<QuoteProps> = ({
 		}
 	};
 
-	const onSubmit = async (e: any, { name, email, phone, website }: FormData) => {
+	const onSubmit = async (e: React.FormEvent<HTMLFormElement>, { name, email, phone, website }: FormData) => {
 		e.preventDefault();
+		const target = e.target as HTMLFormElement;
 
 		const data: quoteSubmissionData = {
 			details,
@@ -81,7 +82,7 @@ const Quote: React.FC<QuoteProps> = ({
 
 		console.log(res);
 		setStep(0);
-		e.target.reset();
+		target.reset();
 		AnalyticsEngineClient.sendMetric(`Filled quote form as: ${name}`);
 		groundControl?.decisionScreenRedirect();
 	};

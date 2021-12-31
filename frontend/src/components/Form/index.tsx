@@ -2,7 +2,7 @@ import React from 'react';
 import { FormData } from '../../../../types';
 
 type FormProps = {
-	onSubmit: (e: any, data: FormData) => void;
+	onSubmit: (e: React.FormEvent<HTMLFormElement>, data: FormData) => void;
 	children?: React.ReactNode;
 };
 
@@ -10,11 +10,13 @@ const Form: React.FC<FormProps> = ({
 	onSubmit,
 	children
 }) => {
-	const submit = (e: any) => {
-		const name = e.target.name.value;
-		const email = e.target.email.value;
-		const phone = e.target.phone.value;
-		const website = e.target.website.value;
+	const submit = (e: React.FormEvent<HTMLFormElement>) => {
+		const target = e.target as HTMLFormElement;
+
+		const name = target.name;
+		const email = target.email.value;
+		const phone = target.phone.value;
+		const website = target.website.value;
 		onSubmit(e , { name, email, phone, website });
 	};
 

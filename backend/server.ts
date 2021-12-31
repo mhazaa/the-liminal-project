@@ -16,13 +16,16 @@ app.listen(HTTPPORT, () => console.log(`Listening to port: ${HTTPPORT}`));
 
 app.use(helmet());
 app.use(express.json());
-app.use(express.static( resolve('../frontend/build') ));
 
 app.use((req, res, next) => {
-	(req.secure)
-		? next()
-		: res.redirect('https://' + req.headers.host + req.url);
+	if (req.secure) {
+		next();
+	} else {
+		res.redirect('https://' + req.headers.host + req.url);
+	}
 });
+
+app.use(express.static( resolve('../frontend/build') ));
 
 const options = {
 	key: fs.readFileSync('./certs/theliminalproject.com.key'),

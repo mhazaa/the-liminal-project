@@ -230,7 +230,7 @@ class Generative extends THREE.Object3D {
 		this.planes.forEach(plane => this.add(plane));
 	}
 
-	async animate (holdTime = 1000) {
+	async animate (/*holdTime = 1000*/) {
 		//await hold(5000);
 
 		this.planes.forEach((plane, i) => {

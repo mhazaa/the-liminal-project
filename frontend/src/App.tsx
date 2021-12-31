@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Router, Page } from './Router';
-import { Home, About, Quote, Contact, Work } from './pages';
+import { Home, About, Quote, Contact } from './pages';
 import { Header, Footer } from './globals';
 import GroundControl from './GroundControl';
 import { AnalyticsEngineClient } from 'mags-analytics';

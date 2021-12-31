@@ -1,5 +1,5 @@
 import React from 'react';
-import content from '../../../content.json';
+//import content from '../../../content.json';
 
 import ReactMarkdown from 'react-markdown';
 

@@ -8,7 +8,15 @@ import { Vector2D, Vector3D } from './classes';
 import content from '../../content.json';
 import planet from '../assets/models/lowpoly.glb';
 import caseStudyImg from '../assets/imgs/cosmicchat.jpg';
-import ubuntoBold from '../assets/fonts/ubunto_bold.json';
+//import ubuntoBoldFont from '../assets/fonts/ubunto_bold.json';
+
+/*import(
+	'../assets/fonts/ubunto_bold.json'
+).then(({default: jsonMenu}) => {
+	console.log('my menu: ', jsonMenu);
+});*/
+
+const ubuntoBoldFontPath = './assets/fonts/ubunto_bold.json';
 
 export type CameraModes = 'frozen' | 'locked' | 'unlocked' | 'tracking' | 'work' | 'mobile';
 
@@ -179,11 +187,12 @@ class DimmableMesh extends THREE.Mesh {
 	targetOpacity = 1;
 	hoverOpacity = 0.3;
 	opacityDamping = 0.1;
-	clickable = true;
+	clickable: boolean;
 	clickEvents: { (): void; } [] = [];
 
-	constructor () {
+	constructor (on = true) {
 		super();
+		this.clickable = on;
 	}
 
 	addClickEvent (event: () => void) {
@@ -278,7 +287,7 @@ class TextMesh extends THREE.Mesh {
 		this.fontSize = fontSize;
 		
 		this.material = new THREE.MeshBasicMaterial({ color: COLORS.white });
-		fontLoader.load('./assets/fonts/ubunto_bold.json', font => {
+		fontLoader.load(ubuntoBoldFontPath, font => {
 			this.geometry = new TextGeometry(this.text.toUpperCase(), {
 				font: font,
 				size: this.fontSize,

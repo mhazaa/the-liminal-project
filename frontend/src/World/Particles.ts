@@ -6,7 +6,7 @@ const textureLoader = new THREE.TextureLoader();
 class Particles extends THREE.Scene {
 	scene: THREE.Scene;
 	geometry: THREE.BufferGeometry;
-	vertices: any[];
+	vertices: number[];
 	sprite: any;
 	materials: THREE.PointsMaterial[];
 	parameters: any[];

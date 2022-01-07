@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import GroundControl from '../../GroundControl';
 import Form from '../../components/Form';
 import content from '../../../content.json';
-import { AnalyticsEngineClient } from 'mags-analytics';
+import AnalyticsEngineClient from '@mhazaa/analytics-engine/client';
 import { FormData, quoteSubmissionData } from '../../../../types';
 
 type PromptProps = {

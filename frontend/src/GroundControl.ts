@@ -2,7 +2,7 @@ import { getUrl, changeUrl } from './Router';
 import { Pages } from '../../types';
 import World from './World';
 import { Vector2D } from './World/classes';
-import { AnalyticsEngineClient } from 'mags-analytics';
+import AnalyticsEngineClient from '@mhazaa/analytics-engine/client';
 import isMobile from './modules/isMobile';
 
 export default class GroundControl {

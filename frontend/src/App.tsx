@@ -3,7 +3,7 @@ import { Router, Page } from './Router';
 import { Home, About, Quote, Contact } from './pages';
 import { Header, Footer } from './globals';
 import GroundControl from './GroundControl';
-import { AnalyticsEngineClient } from 'mags-analytics';
+import AnalyticsEngineClient from '@mhazaa/analytics-engine/client';
 import content from '../content.json';
 import './styles/stylesheet.scss';
 

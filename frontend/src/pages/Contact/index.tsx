@@ -3,7 +3,7 @@ import GroundControl from '../../GroundControl';
 import content from '../../../content.json';
 import Select from './Select';
 import Form from '../../components/Form';
-import { AnalyticsEngineClient } from 'mags-analytics';
+import AnalyticsEngineClient from '@mhazaa/analytics-engine/client';
 import { FormData, contactSubmissionData } from '../../../../types';
 
 type ContactProps = {

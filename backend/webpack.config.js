@@ -15,7 +15,9 @@ module.exports = {
 
 	target: 'node',
 
-	externals: [nodeExternals()],
+	externals: [nodeExternals({
+		additionalModuleDirs: ['../node_modules']
+	})],
 
 	module: {
 		rules: [

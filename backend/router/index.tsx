@@ -2,7 +2,7 @@ import React from 'react';
 import ssr from '../ssr';
 import { resolve } from 'path';
 import { Application } from 'express';
-import { Collection } from 'mags-mongodb';
+import { Collection } from '@mhazaa/mongo-controller';
 import App from '../../frontend/src/App';
 import { contactSubmissionData, quoteSubmissionData } from '../../types';
 

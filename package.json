@@ -11,7 +11,7 @@
 		"start": "npm run build -w ./frontend && npm run start -w ./backend",
 		"stop": "npm run stop -w ./backend",
 		"build": "npm run build -w ./frontend && npm run build -w ./backend",
-		"dev": "npm run dev -ws",
+		"dev": "npm run dev -w ./frontend && npm run dev -w ./backend",
 		"typecheck": "tsc --noEmit",
 		"lint": "eslint . --ext .ts,.tsx --ignore-pattern node_modules",
 		"test": "npm run typecheck && npm run lint"

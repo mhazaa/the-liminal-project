@@ -1,13 +1,13 @@
 {
 	"title": "The Liminal Project",
-	"tagline": "We’re here to build you a unique, interactive, visually stunning website",
+	"tagline": "We’re here to build you a unique, stunning, and creative website",
 	"footer": [
 		"More About Us",
 		"Contact Us"
 	],
 	"about": {
 		"title": "More About Us",
-		"description": "We’re a group of artists and web developers who want to push the limits of the web. We design and build sites that harness modern web technologies to push the limits of web interaction. Is your business or brand looking for a new, unique web presence? We’re here to do that for you, from ideation and design to development and deployment. Forget about cookie-cutter designs and boring wordpress templates. We do everything from scratch and we do it well."
+		"description": "We’re a group of artists and web developers who want to push the limits of the web. We design and build sites that harness modern web technologies to push the limits of web interaction. Is your business or brand looking for a fresh, creative web presence? We’re here to do that for you, from branding and design to development and deployment. Forget about cookie-cutter designs and boring wordpress templates. We do everything from scratch and we do it well."
 	},
 	"work": {
 		"title": "Our Work",

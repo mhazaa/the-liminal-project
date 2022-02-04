@@ -8,20 +8,15 @@
 		padding: 10px;
 		cursor: pointer;
 
-		&:hover, &.active {
-			.mask-text {
-				h1, p { color: black; }
-			}
-
-			.mask-cover {
-				clip-path: inset(0 0 0 0);
-			}
-		}
-
 		.mask-text {
 			h1, p {
 				color: white;
 				transition: $fast-transition color $ease;
+			}
+
+			svg path {
+				fill: white;
+				transition: $fast-transition fill $ease;	
 			}
 		}
 
@@ -36,6 +31,17 @@
 			clip-path: inset(0 100% 0 0);
 			transition: $slow-transition clip-path $ease;
 		}
+
+		&:hover, &.active {
+			.mask-text {
+				h1, p { color: black; }
+				svg path { fill: black; }
+			}
+
+			.mask-cover {
+				clip-path: inset(0 0 0 0);
+			}
+		}
 	}
 }
 
@@ -44,12 +50,20 @@
 	z-index: 10;
 	text-align: center;
 
-	.logo {
+	.logo-container {
 		margin: 60px 0 60px 0;
 		text-align: center;
 		white-space: nowrap;
 		transition: margin $slow-transition $ease;
-		
+
+		.logo-text {
+			position: absolute;
+			text-indent: -9999999px;
+		}
+
+		.logo-svg-container {
+			width: 370px;
+		}
 	}
 
 	.intro-button-container {
@@ -58,7 +72,7 @@
 	}
 
 	&.inIntro {
-		.logo {
+		.logo-container {
 			margin: 200px 0 20px 0;
 		}
 

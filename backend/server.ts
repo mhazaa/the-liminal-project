@@ -18,11 +18,7 @@ app.use(helmet());
 app.use(express.json());
 
 app.use((req, res, next) => {
-	if (req.secure) {
-		next();
-	} else {
-		res.redirect('https://' + req.headers.host + req.url);
-	}
+	(req.secure) ? next() : res.redirect('https://' + req.headers.host + req.url);
 });
 
 app.use(express.static( resolve('../frontend/build') ));

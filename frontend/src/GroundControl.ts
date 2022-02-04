@@ -38,6 +38,8 @@ export default class GroundControl {
 	public changePage (page: Pages) {
 		console.log(page);
 
+		console.log(this.world.scene.children);
+		
 		(page === 'work')
 			? this.world.scene.add(this.world.workPlanet)
 			: this.world.scene.remove(this.world.workPlanet);

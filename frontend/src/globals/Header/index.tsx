@@ -3,6 +3,7 @@ import { Mask } from '../../components';
 import { UrlContext } from '../../Router';
 import GroundControl from '../../GroundControl';
 import content from '../../../content.json';
+import LogoSVG from './LogoSVG';
 
 type HeaderProps = {
 	groundControl?: GroundControl;
@@ -18,9 +19,10 @@ const Header: React.FC<HeaderProps> = ({
 
 	return (
 		<div className={`header ${inIntro ? 'inIntro' : ''}`}>
-			<div className='logo'>
+			<div className='logo-container'>
 				<Mask onClick={onClick}>
-					<h1>{content.title}</h1>
+					<h1 className='logo-text'>{content.title}</h1>
+					<LogoSVG />
 				</Mask>
 			</div>
 

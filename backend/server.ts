@@ -2,34 +2,18 @@ import dotenv from 'dotenv';
 import express from 'express';
 import helmet from  'helmet';
 import { resolve } from 'path';
-import https from 'https';
-import fs from 'fs';
 import AnalyticsEngine from '@mhazaa/analytics-engine';
 import DB, { Config } from '@mhazaa/mongo-controller';
 import router from './router';
 
 dotenv.config();
-const HTTPPORT = 80;
-const HTTPSPORT = 443;
+const PORT = 3000;
 const app: express.Application = express();
-app.listen(HTTPPORT, () => console.log(`Listening to port: ${HTTPPORT}`));
+app.listen(PORT, () => console.log(`Listening to port: ${PORT}`));
 
 app.use(helmet());
 app.use(express.json());
-
-app.use((req, res, next) => {
-	(req.secure) ? next() : res.redirect('https://' + req.headers.host + req.url);
-});
-
 app.use(express.static( resolve('../frontend/build') ));
-
-const options = {
-	key: fs.readFileSync('./certs/theliminalproject.com.key'),
-	cert: fs.readFileSync('./certs/theliminalproject.com.crt'),
-	ca: fs.readFileSync('./certs/theliminalproject.com.ca-bundle')
-};
-
-https.createServer(options, app).listen(HTTPSPORT, () => console.log(`Listening to port: ${HTTPSPORT}`));
 
 const config: Config = {
 	DBUSERNAME: process.env.DBUSERNAME || '',

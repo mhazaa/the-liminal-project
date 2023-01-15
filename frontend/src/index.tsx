@@ -32,12 +32,3 @@ ReactDOM.hydrate(
 	</React.StrictMode>,
 	document.querySelector('#root')
 );
-
-/*import GenerativeWorld from './World/Generative';
-const generativeWorld = new GenerativeWorld(document.querySelector('#canvas-container')!);
-generativeWorld.init();
-const generativeLoop = () => {
-	generativeWorld.loop();
-	requestAnimationFrame(generativeLoop);
-};
-requestAnimationFrame(generativeLoop);*/

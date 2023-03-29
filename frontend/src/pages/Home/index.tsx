@@ -1,5 +1,5 @@
 import React, { useEffect, createRef } from 'react';
-import map from 'mags-modules/map';
+import map from '../../helperFunctions/map';
 import content from '../../../content.json';
 
 const Home: React.FC = () => {

@@ -3,7 +3,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
 import Particles from './Particles';
-import lerp from '../modules/lerp';
+import lerp from '../helperFunctions/lerp';
 import { Vector2D, Vector3D } from './classes';
 import content from '../../content.json';
 import planet from '../assets/models/lowpoly.glb';

@@ -3,7 +3,7 @@ import { Pages } from '../../types';
 import World from './World';
 import { Vector2D } from './World/classes';
 import AnalyticsEngineClient from '@mhazaa/analytics-engine/client';
-import isMobile from './modules/isMobile';
+import isMobile from './helperFunctions/isMobile';
 
 export default class GroundControl {
 	world: World;

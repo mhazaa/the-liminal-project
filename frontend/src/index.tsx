@@ -7,6 +7,7 @@ active / deactivate, button control
 integrate ground control into router
 import json as string, font
 mobile view
+npm run dev not running the app?
 */
 
 import React from 'react';

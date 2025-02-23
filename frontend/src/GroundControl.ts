@@ -3,7 +3,7 @@ import { Pages } from '../../types';
 import World from './World';
 import { Vector2D } from './World/classes';
 import AnalyticsEngineClient from '@mhazaa/analytics-engine/client';
-import isMobile from './helperFunctions/isMobile';
+import isMobileOrTablet from './helperFunctions/isMobileOrTablet';
 
 export default class GroundControl {
 	world: World;
@@ -68,8 +68,8 @@ export default class GroundControl {
 			this.world.camera.changeMode('locked', { position: new Vector2D(300, 300) });
 			break;
 		case 'home':
-			(isMobile())
-				? this.world.camera.changeMode('unlocked')
+			(isMobileOrTablet())
+				? this.world.camera.changeMode('locked')
 				: this.world.camera.changeMode('unlocked');
 			break;
 		case 'about':

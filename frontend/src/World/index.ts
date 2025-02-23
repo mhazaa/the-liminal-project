@@ -308,7 +308,7 @@ class PortfolioSign extends THREE.Object3D {
 	plane: THREE.Mesh;
 	img: DimmableMesh;
 
-	constructor (signTitle: string) {
+	constructor (signTitle: string, img: any) {
 		super();
 		this.signTitle = signTitle;
 
@@ -325,7 +325,7 @@ class PortfolioSign extends THREE.Object3D {
 		this.img = new DimmableMesh();
 		this.img.geometry = new THREE.CircleGeometry(this.circleRadius - 2, this.circleRadius * 2);
 		this.img.material = new THREE.MeshBasicMaterial({
-			map: textureLoader.load(caseStudyImg)
+			map: textureLoader.load(img)
 		});
 		this.img.position.y = this.planeHeight + this.pivotY;
 		this.img.position.z = 0.5;
@@ -435,10 +435,10 @@ class World {
 		this.generateOtherPlanets();
 
 		this.workPlanet = new MainPlanet();
-		this.portfolioSign = new PortfolioSign('Cosmic Chat');
+		this.portfolioSign = new PortfolioSign('Cosmic Chat', caseStudyImg);
 		this.raycaster.addChild(this.portfolioSign.img);
 		this.portfolioSign.rotation.z = Math.PI / 5;
-		const portfolioSignTwo = new PortfolioSign('Cosmic Chat');
+		const portfolioSignTwo = new PortfolioSign('Shapeshifter.js', caseStudyImg);
 		portfolioSignTwo.rotation.z = -Math.PI / 5;
 		this.raycaster.addChild(portfolioSignTwo.img);
 		this.workPlanet.add(this.portfolioSign);

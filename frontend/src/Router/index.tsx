@@ -39,7 +39,7 @@ export const Router: React.FC<RouterProps> = ({
 };
 
 type PageProps = {
-	children: React.ReactNode;
+	children?: React.ReactNode;
 	path?: string | string[]
 };
 
